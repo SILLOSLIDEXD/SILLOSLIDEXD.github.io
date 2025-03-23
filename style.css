@@ -1,0 +1,57 @@
+/* Default (light mode) styles */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.slider:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s;
+}
+
+input:checked + .slider {
+    background-color: #333;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Dark mode styles */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+}
